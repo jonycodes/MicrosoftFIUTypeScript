@@ -10,7 +10,7 @@ TypeScript workshop for FIU students.
   Once in the site click on `Language APIs` 
   On the blue `Guest` option click `Get Started` 
   Accept terms and conditions
-  Sign in with your preffered account
+  Sign in with your preferred account
   If do not have any MS, FB, linkedIn or Github account, come see us.
  ```
 
