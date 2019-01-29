@@ -1,8 +1,18 @@
 # Microsoft FIU TypeScript Workshop
 TypeScript workshop for FIU students.
 
-We assume that you're already using [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
-You may also want to get a sense of [the basics with React](https://facebook.github.io/react/docs/hello-world.html).
+## Prerequisites
+
+[MUST] We assume that you're already using [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
+[MUST] Signup for Azure Cognitive Service free trial: https://azure.microsoft.com/en-us/try/cognitive-services/#lang
+ ```
+  Once in the site click on `Language APIs` 
+  On the blue `Guest` option click `Get Started` 
+  Accept terms and conditions
+  Sign in with your preffered account
+  If do not have any MS, FB, linkedIn or Github account, come see us.
+ ```
+[Recommended] You may also want to get a sense of [the basics with React](https://facebook.github.io/react/docs/hello-world.html).
 
 ## Install create-react-app
 
