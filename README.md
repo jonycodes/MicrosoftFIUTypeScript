@@ -3,7 +3,7 @@ TypeScript workshop for FIU students.
 
 ## Prerequisites
 
-[MUST] We assume that you're already using [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
+[MUST] Install [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
 
 [MUST] Signup for Azure Cognitive Service free trial: https://azure.microsoft.com/en-us/try/cognitive-services/#lang
  ```
