@@ -5,7 +5,7 @@ TypeScript workshop for FIU students.
 
 [MUST] Install [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
 
-[MUST] Signup for Azure Cognitive Service free trial: https://azure.microsoft.com/en-us/try/cognitive-services/#lang
+[MUST] Signup for Azure Cognitive Service free trial: [Azure Cognitive Service](https://azure.microsoft.com/en-us/try/cognitive-services/#lang)
  ```
   Once in the site click on `Language APIs` 
   On the blue `Guest` option click `Get Started` 
