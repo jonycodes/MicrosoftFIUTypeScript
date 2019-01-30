@@ -44,7 +44,15 @@ my-app/
 ├─ node_modules/
 ├─ public/
 ├─ src/
-│  └─ ...
+│  └─ App.css 
+|  └─ App.test.tsx
+|  └─ App.tsx
+|  └─ index.css
+|  └─ index.tsx
+|  └─ log.svg
+|  └─ registerServiceWorker.ts
+|  └─ utils/
+      └─ service.ts 
 ├─ package.json
 ├─ tsconfig.json
 ├─ tsconfig.prod.json
@@ -109,4 +117,4 @@ Typically the server runs at `http://localhost:3000`, but should be automaticall
 
 This tightens the iteration loop by allowing us to quickly preview changes.
 
-More info [link] https://github.com/Microsoft/TypeScript-React-Starter/edit/master/README.md
+[More info](https://github.com/Microsoft/TypeScript-React-Starter/edit/master/README.md)
