@@ -1,17 +1,18 @@
 import * as React from 'react';
 import './App.css';
 
+import List from './List';
 import logo from './logo.svg';
 
-interface IMyCustomProps {      
-  items: any[],
+export interface IMyCustomProps {      
+  items: string[],
   value: ''
 }; 
 class App extends React.Component<{}, IMyCustomProps> {
   constructor(props: any) {
     super(props);
     this.state = {
-      items: [''],
+      items: [],
       value: ''
     }
   }
@@ -38,6 +39,7 @@ class App extends React.Component<{}, IMyCustomProps> {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <List items={this.state.items}/>
         <form className="App" onSubmit={this.onSubmit}>
             <input value={this.state.value} onChange={this.onChange} />
             <button>Submit</button>

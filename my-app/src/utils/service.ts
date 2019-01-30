@@ -1,21 +1,22 @@
-import { host, path, configs } from '.\config.ts'
 import request from 'request-promise'
+import { Config } from './Config';
 
-class Service {
-  private const uri = host + "/" + path + "/" + configs; 
+export class Service {
+  private uri = Config.host + "/" + Config.path + "/" + Config.configs; 
   private azureKey:string;
   
-  constructor(key) {
+  constructor(key: string) {
     this.azureKey = key;
   }
 
-  async function checkSpelling(string phrase): void {
-    var options = {
+  public async checkSpelling(phrase: string): Promise<void> {
+    const options = {
         method : 'POST',
         uri : this.uri,
+        // tslint:disable-next-line:object-literal-sort-keys
         headers : {
-        'Content-Type' : 'application/x-www-form-urlencoded',
         'Content-Length' : phrase.length + 5,
+        'Content-Type' : 'application/x-www-form-urlencoded',
         'Ocp-Apim-Subscription-Key' : this.azureKey,
 //        'X-Search-Location' : CLIENT_LOCATION,
 //        'X-MSEdge-ClientID' : CLIENT_ID,
@@ -25,8 +26,9 @@ class Service {
     };
     
     try {
-      var response = await request(options);
+      await request(options);
     } catch (error) {
+      // tslint:disable-next-line:no-console
       console.log(error);
     }
   }
