@@ -1,8 +1,20 @@
 # Microsoft FIU TypeScript Workshop
 TypeScript workshop for FIU students.
 
-We assume that you're already using [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
-You may also want to get a sense of [the basics with React](https://facebook.github.io/react/docs/hello-world.html).
+## Prerequisites
+
+[MUST] Install [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/).
+
+[MUST] Signup for Azure Cognitive Service free trial: [Azure Cognitive Service](https://azure.microsoft.com/en-us/try/cognitive-services/#lang)
+ ```
+  Once in the site click on `Language APIs` 
+  On the blue `Guest` option click `Get Started` 
+  Accept terms and conditions
+  Sign in with your preferred account
+  If do not have any MS, FB, linkedIn or Github account, come see us.
+ ```
+
+[Recommended] You may also want to get a sense of [the basics with React](https://facebook.github.io/react/docs/hello-world.html).
 
 ## Install create-react-app
 
@@ -32,7 +44,15 @@ my-app/
 ├─ node_modules/
 ├─ public/
 ├─ src/
-│  └─ ...
+│  └─ App.css 
+|  └─ App.test.tsx
+|  └─ App.tsx
+|  └─ index.css
+|  └─ index.tsx
+|  └─ log.svg
+|  └─ registerServiceWorker.ts
+|  └─ utils/
+      └─ service.ts 
 ├─ package.json
 ├─ tsconfig.json
 ├─ tsconfig.prod.json
@@ -97,4 +117,4 @@ Typically the server runs at `http://localhost:3000`, but should be automaticall
 
 This tightens the iteration loop by allowing us to quickly preview changes.
 
-More info [link] https://github.com/Microsoft/TypeScript-React-Starter/edit/master/README.md
+[More info](https://github.com/Microsoft/TypeScript-React-Starter/edit/master/README.md)
