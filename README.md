@@ -178,6 +178,7 @@ export class Service {
 
 ## Go to App.tsx
 Add onSubmit function:
+```
   public onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (await this.isCorrectSpelling()) {
@@ -187,13 +188,17 @@ Add onSubmit function:
       });
     }
   }
+ ```
 
 Add onChange function:
+```
   public onChange = (event: any) => {
     this.setState({value: event.target.value});
   }
+```
 
 Change what we render:
+```
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -208,3 +213,4 @@ Change what we render:
             <button>Submit</button>
         </form>
       </div>
+```
