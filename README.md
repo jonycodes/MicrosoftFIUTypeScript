@@ -120,6 +120,7 @@ This tightens the iteration loop by allowing us to quickly preview changes.
 [More info](https://github.com/Microsoft/TypeScript-React-Starter/edit/master/README.md)
 
 ## Create our List.tsx
+```
 import React, { ComponentProps } from 'react';
 
 const List = (props: ComponentProps<any>) => (
@@ -131,6 +132,7 @@ const List = (props: ComponentProps<any>) => (
 );
 
 export default List;
+```
 
 ## Create Utils Folder
 Create config.ts
