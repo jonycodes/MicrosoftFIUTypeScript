@@ -1,5 +1,5 @@
 import request from 'request-promise'
-import { Config } from './sample.config';
+import { Config } from '../config';
 
 export class Service {
   private uri = Config.host + "/" + Config.path + "/" + Config.configs; 
@@ -26,7 +26,7 @@ export class Service {
     };
     
     try {
-      await request(options);
+      return await request(options);
     } catch (error) {
       // tslint:disable-next-line:no-console
       console.log(error);
