@@ -1,7 +1,6 @@
 export class Config {
-    public static host: string = "";
-    public static configs = "";
-    public static path = "";
+    public static host: string = "https://api.cognitive.microsoft.com";
+    public static configs = "?mkt=en-US&mode=proof";
+    public static path = "bing/v7.0/spellcheck";
     public static key = "";
-    // back up 32e5d674fcd64c2093c4ef6b14bfa3a5
 }
