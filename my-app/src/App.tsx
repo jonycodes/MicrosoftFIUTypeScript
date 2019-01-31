@@ -28,6 +28,17 @@ class App extends React.Component<{}, IMyCustomProps> {
       value: ''
     });
   }
+  
+  public onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    service.checkSpelling(this.state.value).then(response => {
+      // tslint:disable-next-line:no-console
+      this.setState({
+        items: [...this.state.items, this.state.value],
+        value: ''
+      });
+    })
+  }
 
   public render() {
     return (
