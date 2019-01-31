@@ -1,5 +1,5 @@
 import request from 'request-promise'
-import { Config } from '../config';
+import { Config } from './config';
 
 export class Service {
   private uri = Config.host + "/" + Config.path + "/" + Config.configs; 

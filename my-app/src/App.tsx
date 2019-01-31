@@ -1,13 +1,13 @@
 import * as React from 'react';
 import './App.css';
 
-import { Config } from './config'
 import List from './List';
 import logo from './logo.svg';
+import { Config } from './utils/config';
 import { Service } from './utils/service'
 
 export interface IMyCustomProps {      
-  items: string[],
+  items: string[]
   value: ''
 }; 
 
@@ -26,23 +26,24 @@ class App extends React.Component<{}, IMyCustomProps> {
     this.setState({value: event.target.value});
   }
 
-  public onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    this.setState({
-      items: [...this.state.items, this.state.value],
-      value: ''
-    });
+  public async isCorrectSpelling(): Promise<boolean> {
+    return await service.checkSpelling(this.state.value).then((response: any) => {
+      if (response && response.flaggedToken.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    })
   }
-  
-  public onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+  public onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    service.checkSpelling(this.state.value).then(response => {
-      // tslint:disable-next-line:no-console
+    if (await this.isCorrectSpelling()) {
       this.setState({
         items: [...this.state.items, this.state.value],
         value: ''
       });
-    })
+    }
   }
 
   public render() {
