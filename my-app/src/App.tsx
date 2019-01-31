@@ -1,13 +1,18 @@
 import * as React from 'react';
 import './App.css';
 
+import { Config } from './config'
 import List from './List';
 import logo from './logo.svg';
+import { Service } from './utils/service'
 
 export interface IMyCustomProps {      
   items: string[],
   value: ''
 }; 
+
+const service = new Service(Config.key); 
+
 class App extends React.Component<{}, IMyCustomProps> {
   constructor(props: any) {
     super(props);
