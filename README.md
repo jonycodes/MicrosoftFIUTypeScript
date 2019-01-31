@@ -118,3 +118,93 @@ Typically the server runs at `http://localhost:3000`, but should be automaticall
 This tightens the iteration loop by allowing us to quickly preview changes.
 
 [More info](https://github.com/Microsoft/TypeScript-React-Starter/edit/master/README.md)
+
+## Create our List.tsx
+import React, { ComponentProps } from 'react';
+
+const List = (props: ComponentProps<any>) => (
+  <ul>
+    {
+      props.items.map((item: string, index: number) => <li key={index}>{item}</li>)
+    }
+  </ul>
+);
+
+export default List;
+
+## Create Utils Folder
+Create config.ts
+export class Config {
+    public static host: string = "https://api.cognitive.microsoft.com";
+    public static configs = "?mkt=en-US&mode=proof";
+    public static path = "bing/v7.0/spellcheck";
+    public static key = "32e5d674fcd64c2093c4ef6b14bfa3a5";
+    // back up 32e5d674fcd64c2093c4ef6b14bfa3a5
+}
+
+Create service.ts
+import request from 'request-promise'
+import { Config } from './config';
+
+export class Service {
+  private uri = Config.host + "/" + Config.path + "/" + Config.configs; 
+  private azureKey:string;
+  
+  constructor(key: string) {
+    this.azureKey = key;
+  }
+
+  public async checkSpelling(phrase: string): Promise<void> {
+    const options = {
+        method : 'POST',
+        uri : this.uri,
+        // tslint:disable-next-line:object-literal-sort-keys
+        headers : {
+        'Content-Length' : phrase.length + 5,
+        'Content-Type' : 'application/x-www-form-urlencoded',
+        'Ocp-Apim-Subscription-Key' : this.azureKey,
+        },
+        body: "text=" + phrase
+    };
+    
+    try {
+      return await request(options);
+    } catch (error) {
+      // tslint:disable-next-line:no-console
+      console.log(error);
+    }
+  }
+}
+
+## Go to App.tsx
+Add onSubmit function:
+  public onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (await this.isCorrectSpelling()) {
+      this.setState({
+        items: [...this.state.items, this.state.value],
+        value: ''
+      });
+    }
+  }
+
+Add onChange function:
+  public onChange = (event: any) => {
+    this.setState({value: event.target.value});
+  }
+
+Change what we render:
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React Todo App</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <List items={this.state.items}/>
+        <form className="App" onSubmit={this.onSubmit}>
+            <input value={this.state.value} onChange={this.onChange} />
+            <button>Submit</button>
+        </form>
+      </div>
