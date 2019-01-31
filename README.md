@@ -108,8 +108,6 @@ Let's fix that up.
 
 Running the project is as simple as running
 
-Copy `sample.config.ts` to `config.ts` and leave the values empty, we will fill them later 
-
 ```sh
 npm run start
 ```
