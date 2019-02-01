@@ -192,12 +192,30 @@ import logo from './logo.svg';
 import { Config } from './utils/config';
 import { Service } from './utils/service'
 ```
-In Constructor include the follow:
+Declare interface:
 ```
+export interface IMyCustomProps {      
+  items: string[]
+  value: ''
+}; 
+
+const service = new Service(Config.key); 
+```
+
+Use iterface:
+```
+class App extends React.Component<{}, IMyCustomProps> 
+```
+
+Make constructor:
+```
+  constructor(props: any) {
+    super(props);
     this.state = {
       items: [],
       value: ''
     }
+  }
 ```
 Add onSubmit function:
 ```
