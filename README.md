@@ -182,6 +182,23 @@ export class Service {
 ```
 
 ## Go to App.tsx
+Make sure you have the following imports:
+```
+import * as React from 'react';
+import './App.css';
+
+import List from './List';
+import logo from './logo.svg';
+import { Config } from './utils/config';
+import { Service } from './utils/service'
+```
+In Constructor include the follow:
+```
+    this.state = {
+      items: [],
+      value: ''
+    }
+```
 Add onSubmit function:
 ```
   public onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
