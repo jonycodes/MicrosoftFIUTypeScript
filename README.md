@@ -237,6 +237,19 @@ Add onChange function:
   }
 ```
 
+Add isCorrectSpelling:
+```
+public async isCorrectSpelling(): Promise<boolean> {
+    return await service.checkSpelling(this.state.value).then((response: any) => {
+      if (response && response.flaggedToken.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    })
+  }
+```
+
 Change what we render:
 ```
       <div className="App">
